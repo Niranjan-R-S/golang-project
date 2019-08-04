@@ -1,12 +1,12 @@
 package main
 
 import (
-  "fmt"
-  "bufio"
-  "os"
-  "net/http"
-  "./controller/rnaTranscriptionController"
-  "./repository/graphRepository"
+    "./controller/rnaTranscriptionController"
+    "./repository/graphRepository"
+    "bufio"
+    "fmt"
+    "net/http"
+    "os"
 )
 
 func getUserInput() string{
@@ -27,5 +27,5 @@ func init(){
 func main(){
     http.HandleFunc("/", rnaTranscriptionController.SayHelloWorld)
     http.HandleFunc("/rnaTranscription", rnaTranscriptionController.RnaTranscriptionProblem)
-    http.ListenAndServe(":8080", nil)
+    _ = http.ListenAndServe(":8080", nil)
 }

@@ -20,7 +20,7 @@ func getComponentMap(dnaComponents []string, rnaComponents []string) map[string]
 }
 
 func ConvertDNAToRNA(userInputDna string) string{
-    var componentMap map[string] string = getComponentMap(getDNAComponents(), getRNAComponents())
+    var componentMap = getComponentMap(getDNAComponents(), getRNAComponents())
     var finalString = ""
     for _, value := range userInputDna{
         finalString += componentMap[string(value)]

@@ -1,9 +1,9 @@
 package graphRepository
 
-import(
-  "github.com/qasaur/gremgo"
-  "log"
-  "fmt"
+import (
+    "fmt"
+    "github.com/qasaur/gremgo"
+    "log"
 )
 
 var DB gremgo.Client
@@ -22,6 +22,8 @@ func ConnectToDatabase(){
       fmt.Println(err)
         return
     }
+    _, _ = DB.Execute("graph.io(IoCore.gryo()).readGraph('leader-graph.kryo')", map[string]string{}, map[string]string{})
+    queryFromDatabase()
 }
 
 func queryFromDatabase(){

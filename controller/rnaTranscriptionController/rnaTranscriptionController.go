@@ -1,14 +1,14 @@
 package rnaTranscriptionController
 
 import (
-  "fmt"
-  "net/http"
-  "encoding/json"
-  "../../model/rnaTranscriptionModel"
+    "../../model/rnaTranscriptionModel"
+    "encoding/json"
+    "fmt"
+    "net/http"
 )
 
 func SayHelloWorld(response http.ResponseWriter, request *http.Request){
-    fmt.Fprintf(response, "Hello World")
+    _, _ = fmt.Fprintf(response, "Hello World")
 }
 
 func RnaTranscriptionProblem(response http.ResponseWriter, request *http.Request){
@@ -23,7 +23,7 @@ func RnaTranscriptionProblem(response http.ResponseWriter, request *http.Request
     dnaString := data.DNA
 
     var userInputDna string = dnaString
-    fmt.Fprintf(response, rnaTranscriptionModel.ConvertDNAToRNA(userInputDna))
+    _, _ = fmt.Fprintf(response, rnaTranscriptionModel.ConvertDNAToRNA(userInputDna))
 }
 
 type myData struct {
