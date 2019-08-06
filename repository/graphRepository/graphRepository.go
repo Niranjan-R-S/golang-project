@@ -22,13 +22,12 @@ func ConnectToDatabase(){
       fmt.Println(err)
         return
     }
-    _, _ = DB.Execute("graph.io(IoCore.gryo()).readGraph('leader-graph.kryo')", map[string]string{}, map[string]string{})
     queryFromDatabase()
 }
 
 func queryFromDatabase(){
     res, err := DB.Execute( // Sends a query to Gremlin Server with bindings
-      "g.V().has('name', 'neptune')",
+      "g.V()",
       map[string]string{},
       map[string]string{},
     )

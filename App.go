@@ -1,6 +1,7 @@
 package main
 
 import (
+    "./controller/leaderController"
     "./controller/rnaTranscriptionController"
     "./repository/graphRepository"
     "bufio"
@@ -27,5 +28,7 @@ func init(){
 func main(){
     http.HandleFunc("/", rnaTranscriptionController.SayHelloWorld)
     http.HandleFunc("/rnaTranscription", rnaTranscriptionController.RnaTranscriptionProblem)
+    http.HandleFunc("/getAllLeaders", leaderController.GetAllLeaders)
+    http.HandleFunc("/createLeader", leaderController.CreateLeader)
     _ = http.ListenAndServe(":8080", nil)
 }

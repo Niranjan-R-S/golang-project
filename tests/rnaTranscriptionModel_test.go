@@ -1,13 +1,13 @@
 package tests
 
 import (
-	"../model/rnaTranscriptionModel"
+	"../service/rnaTranscriptionService"
 	"testing"
 )
 
 func TestConvertDNAToRNA(t *testing.T) {
 	var DNAString = "CTAG"
-	var convertedRNA = rnaTranscriptionModel.ConvertDNAToRNA(DNAString)
+	var convertedRNA = rnaTranscriptionService.ConvertDNAToRNA(DNAString)
 	if convertedRNA != "GAUC" {
 		t.Errorf("Returned: %s, Expected: %s", convertedRNA, DNAString)
 	}

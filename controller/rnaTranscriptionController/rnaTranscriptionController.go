@@ -1,7 +1,7 @@
 package rnaTranscriptionController
 
 import (
-    "../../model/rnaTranscriptionModel"
+    "../../service/rnaTranscriptionService"
     "encoding/json"
     "fmt"
     "net/http"
@@ -23,7 +23,7 @@ func RnaTranscriptionProblem(response http.ResponseWriter, request *http.Request
     dnaString := data.DNA
 
     var userInputDna string = dnaString
-    _, _ = fmt.Fprintf(response, rnaTranscriptionModel.ConvertDNAToRNA(userInputDna))
+    _, _ = fmt.Fprintf(response, rnaTranscriptionService.ConvertDNAToRNA(userInputDna))
 }
 
 type myData struct {

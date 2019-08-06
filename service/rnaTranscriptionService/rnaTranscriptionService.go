@@ -1,4 +1,4 @@
-package rnaTranscriptionModel
+package rnaTranscriptionService
 
 func getDNAComponents() []string{
     var dnaComponents = []string{"G", "C", "T", "A"}
